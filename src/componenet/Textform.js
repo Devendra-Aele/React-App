@@ -14,8 +14,8 @@ export default function Textform(props) {
     setText("");
   };
   const clickCopy = () => {
-    let area = document.getElementById("exampleFormControlTextarea1");
-    area.select();
+    // let area = document.getElementById("exampleFormControlTextarea1");
+    // area.select();
     navigator.clipboard.writeText(text);
     document.getSelection().removeAllRanges();
   };
@@ -97,7 +97,7 @@ export default function Textform(props) {
         </div>
         <h3 className="my-4">Counter</h3>
         <p>
-          {text.split(" ").filter((element)=>{ return element.length!==0}).length} word And {text.length} Charector
+          {text.split(/\s+/).filter((element)=>{ return element.length!==0}).length} word And {text.length} Charector
         </p>
         <p>
           You Can Read The Text in <b> {0.008 * text.split(" ").filter((element)=>{ return element.length!==0}).length} </b>Min{" "}
